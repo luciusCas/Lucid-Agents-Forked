@@ -106,10 +106,67 @@ module.exports = {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' },
 				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' },
+				},
+				'slide-in-up': {
+					from: { opacity: '0', transform: 'translateY(30px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				'slide-in-down': {
+					from: { opacity: '0', transform: 'translateY(-30px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				'slide-in-left': {
+					from: { opacity: '0', transform: 'translateX(-40px)' },
+					to: { opacity: '1', transform: 'translateX(0)' },
+				},
+				'slide-in-right': {
+					from: { opacity: '0', transform: 'translateX(40px)' },
+					to: { opacity: '1', transform: 'translateX(0)' },
+				},
+				'scale-in': {
+					from: { opacity: '0', transform: 'scale(0.95)' },
+					to: { opacity: '1', transform: 'scale(1)' },
+				},
+				'scale-in-large': {
+					from: { opacity: '0', transform: 'scale(0.85)' },
+					to: { opacity: '1', transform: 'scale(1)' },
+				},
+				'bounce-in': {
+					'0%': { opacity: '0', transform: 'scale(0.85)' },
+					'50%': { opacity: '1' },
+					'70%': { transform: 'scale(1.05)' },
+					'100%': { opacity: '1', transform: 'scale(1)' },
+				},
+				'float-in': {
+					from: { opacity: '0', transform: 'translateY(20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				'glow-pulse': {
+					'0%, 100%': { boxShadow: '0 0 0 0 rgba(124, 144, 130, 0.4)' },
+					'50%': { boxShadow: '0 0 0 10px rgba(124, 144, 130, 0)' },
+				},
+				'light-pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards',
+				'slide-in-up': 'slide-in-up 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'slide-in-down': 'slide-in-down 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'slide-in-left': 'slide-in-left 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'slide-in-right': 'slide-in-right 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'scale-in': 'scale-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'scale-in-large': 'scale-in-large 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'bounce-in': 'bounce-in 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+				'float-in': 'float-in 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+				'glow-pulse': 'glow-pulse 2s infinite',
+				'light-pulse': 'light-pulse 2s ease-in-out infinite',
 			},
 		},
 	},

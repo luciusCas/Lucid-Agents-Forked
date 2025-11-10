@@ -1,0 +1,221 @@
+/* Cinema-style Animations */
+
+/* Fade In - Smooth opacity transition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up - Elegant upward motion with fade */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Down - Elegant downward motion with fade */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Left - Elegant left motion with fade */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide Right - Elegant right motion with fade */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In - Zoom effect with fade */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scale In Large - Bigger zoom effect */
+@keyframes scaleInLarge {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Bounce In - Playful entrance */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Float In - Subtle floating effect */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow Pulse - Subtle glowing effect */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(124, 144, 130, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(124, 144, 130, 0);
+  }
+}
+
+/* Light Pulse - Opacity pulse */
+@keyframes lightPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Animation Classes */
+
+.cinema-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.cinema-slide-up {
+  animation: slideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cinema-slide-down {
+  animation: slideInDown 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cinema-slide-left {
+  animation: slideInLeft 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cinema-slide-right {
+  animation: slideInRight 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cinema-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cinema-scale-in-large {
+  animation: scaleInLarge 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cinema-bounce-in {
+  animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.cinema-float-in {
+  animation: floatIn 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.cinema-glow-pulse {
+  animation: glowPulse 2s infinite;
+}
+
+.cinema-light-pulse {
+  animation: lightPulse 2s ease-in-out infinite;
+}
+
+/* Stagger animations for multiple elements */
+.cinema-stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.cinema-stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.cinema-stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.cinema-stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.cinema-stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.cinema-stagger-6 {
+  animation-delay: 0.6s;
+}
+
+/* Ensure animations start from invisible state */
+[class*="cinema-"] {
+  opacity: 0;
+}
+
+.cinema-fade-in,
+.cinema-slide-up,
+.cinema-slide-down,
+.cinema-slide-left,
+.cinema-slide-right,
+.cinema-scale-in,
+.cinema-scale-in-large,
+.cinema-bounce-in,
+.cinema-float-in {
+  opacity: 0;
+}

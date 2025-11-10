@@ -75,15 +75,17 @@ export default function Marketplace() {
       {/* Marketplace Section */}
       <div id="marketplace" className="max-w-7xl mx-auto px-4 py-12 space-y-8">
         {/* Stats Bar */}
-        <StatsBar
-          totalAgents={agents.length}
-          totalEarnings={totalEarnings}
-          totalRequests={totalRequests}
-          avgReputation={avgReputation}
-        />
+        <div className="animate-slide-in-up [animation-delay:0.2s]">
+          <StatsBar
+            totalAgents={agents.length}
+            totalEarnings={totalEarnings}
+            totalRequests={totalRequests}
+            avgReputation={avgReputation}
+          />
+        </div>
 
         {/* Search and Filter */}
-        <div className="flex flex-col md:flex-row gap-3">
+        <div className="flex flex-col md:flex-row gap-3 animate-fade-in [animation-delay:0.3s]">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 z-10" />
             <Input
@@ -129,17 +131,19 @@ export default function Marketplace() {
           </div>
         ) : (
           <>
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-muted-foreground animate-fade-in [animation-delay:0.4s]">
               Menampilkan {filteredAgents.length} dari {agents.length} agents
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filteredAgents.map(agent => (
-                <AgentCard key={agent.id} agent={agent} />
+              {filteredAgents.map((agent, idx) => (
+                <div key={agent.id} style={{ animationDelay: `${0.4 + idx * 0.08}s` }}>
+                  <AgentCard agent={agent} />
+                </div>
               ))}
             </div>
 
             {filteredAgents.length === 0 && (
-              <div className="text-center py-20">
+              <div className="text-center py-20 animate-fade-in [animation-delay:0.4s]">
                 <Filter className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
                 <p className="text-muted-foreground text-base">Tidak ada agents yang cocok dengan filter Anda</p>
               </div>

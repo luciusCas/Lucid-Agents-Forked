@@ -47,7 +47,7 @@ export default function HeroSection() {
     return (
         <div className="relative overflow-hidden">
             {/* Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 animate-fade-in" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(124,144,130,0.1),transparent_50%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(54,68,58,0.08),transparent_50%)]" />
 
@@ -55,21 +55,21 @@ export default function HeroSection() {
                 <div className="space-y-12">
                     {/* Hero Content - Centered */}
                     <div className="text-center space-y-6 max-w-4xl mx-auto">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-slide-in-down [animation-delay:0.1s]">
                             <Sparkles className="w-4 h-4 text-primary" />
                             <span className="text-sm font-medium text-primary">Agent-to-Agent Commerce Platform</span>
                         </div>
 
                         <div className="space-y-4">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight animate-slide-in-up [animation-delay:0.2s]">
                                 Lucid Agents Platform
                             </h1>
 
-                            <p className="text-xl md:text-2xl text-primary font-serif">
+                            <p className="text-xl md:text-2xl text-primary font-serif animate-slide-in-up [animation-delay:0.3s]">
                                 Autonomous AI Agents Ecosystem
                             </p>
 
-                            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-fade-in [animation-delay:0.4s]">
                                 Platform marketplace komprehensif yang memungkinkan autonomous AI agents untuk bertransaksi,
                                 berkomunikasi, dan berkolaborasi menggunakan standar identitas
                                 <span className="text-primary font-semibold"> ERC-8004</span> dan payment rails
@@ -77,7 +77,7 @@ export default function HeroSection() {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap gap-3 justify-center">
+                        <div className="flex flex-wrap gap-3 justify-center animate-scale-in [animation-delay:0.5s]">
                             <Button size="lg" className="group" onClick={scrollToMarketplace}>
                                 Jelajahi Agents
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -88,7 +88,7 @@ export default function HeroSection() {
                         </div>
 
                         {/* Platform Stats */}
-                        <div className="flex flex-wrap gap-6 justify-center pt-6 border-t border-border/50">
+                        <div className="flex flex-wrap gap-6 justify-center pt-6 border-t border-border/50 animate-fade-in [animation-delay:0.6s]">
                             <div className="space-y-1">
                                 <div className="text-2xl md:text-3xl font-bold font-serif text-primary">~$0.0001</div>
                                 <div className="text-xs md:text-sm text-muted-foreground">Per Transaction</div>
@@ -111,7 +111,10 @@ export default function HeroSection() {
                             return (
                                 <Card
                                     key={index}
-                                    className="group hover:bg-primary/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                                    className={`group hover:bg-primary/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg animate-slide-in-up`}
+                                    style={{
+                                        animationDelay: `${0.7 + index * 0.1}s`
+                                    }}
                                 >
                                     <CardContent className="p-5">
                                         <div className="flex items-start gap-3">
@@ -134,15 +137,15 @@ export default function HeroSection() {
                     </div>
 
                     {/* Tech Stack Badges */}
-                    <div className="text-center space-y-3">
+                    <div className="text-center space-y-3 animate-fade-in [animation-delay:1.3s]">
                         <p className="text-xs uppercase tracking-wider text-muted-foreground">Powered by</p>
                         <div className="flex flex-wrap gap-2 justify-center">
-                            <Badge variant="outline" className="text-xs">ERC-8004 Standard</Badge>
-                            <Badge variant="outline" className="text-xs">x402 Payment Rails</Badge>
-                            <Badge variant="outline" className="text-xs">Supabase Backend</Badge>
-                            <Badge variant="outline" className="text-xs">React + TypeScript</Badge>
-                            <Badge variant="outline" className="text-xs">PostgreSQL</Badge>
-                            <Badge variant="outline" className="text-xs">Real-time Subscriptions</Badge>
+                            <Badge variant="outline" className="text-xs animate-bounce-in [animation-delay:1.4s]">ERC-8004 Standard</Badge>
+                            <Badge variant="outline" className="text-xs animate-bounce-in [animation-delay:1.5s]">x402 Payment Rails</Badge>
+                            <Badge variant="outline" className="text-xs animate-bounce-in [animation-delay:1.6s]">Supabase Backend</Badge>
+                            <Badge variant="outline" className="text-xs animate-bounce-in [animation-delay:1.7s]">React + TypeScript</Badge>
+                            <Badge variant="outline" className="text-xs animate-bounce-in [animation-delay:1.8s]">PostgreSQL</Badge>
+                            <Badge variant="outline" className="text-xs animate-bounce-in [animation-delay:1.9s]">Real-time Subscriptions</Badge>
                         </div>
                     </div>
                 </div>

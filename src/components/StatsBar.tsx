@@ -51,9 +51,12 @@ export default function StatsBar({ totalAgents, totalEarnings, totalRequests, av
         return (
           <Card
             key={index}
-            className={`bg-gradient-to-br ${stat.gradient} border ${stat.border} transition-all duration-300 hover:scale-105`}
+            className={`bg-gradient-to-br ${stat.gradient} border ${stat.border} transition-all duration-300 hover:scale-105 animate-slide-in-up`}
+            style={{
+              animationDelay: `${0.2 + index * 0.1}s`
+            }}
           >
-            <CardContent className="p-6">
+            <CardContent className="p-6 animate-fade-in" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">
@@ -63,7 +66,7 @@ export default function StatsBar({ totalAgents, totalEarnings, totalRequests, av
                     {stat.value}
                   </p>
                 </div>
-                <Icon className={`w-10 h-10 ${stat.iconColor} opacity-40`} />
+                <Icon className={`w-10 h-10 ${stat.iconColor} opacity-40 animate-float-in`} style={{ animationDelay: `${0.4 + index * 0.1}s` }} />
               </div>
             </CardContent>
           </Card>
