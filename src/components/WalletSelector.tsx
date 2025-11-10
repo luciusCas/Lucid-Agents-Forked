@@ -69,7 +69,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
 
             const ethereum = (window as any).ethereum
             if (!ethereum) {
-                throw new Error('MetaMask tidak terinstall')
+                throw new Error('MetaMask is not installed')
             }
 
             // Request account access
@@ -89,7 +89,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
                 }, 1000)
             }
         } catch (err: any) {
-            setError(err.message || 'Gagal terhubung ke MetaMask')
+            setError(err.message || 'Failed to connect to MetaMask')
         } finally {
             setConnecting(false)
         }
@@ -102,7 +102,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
 
             const ethereum = (window as any).ethereum
             if (!ethereum?.isCoinbaseWallet) {
-                throw new Error('Coinbase Wallet tidak terinstall')
+                throw new Error('Coinbase Wallet is not installed')
             }
 
             const accounts = await ethereum.request({
@@ -120,7 +120,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
                 }, 1000)
             }
         } catch (err: any) {
-            setError(err.message || 'Gagal terhubung ke Coinbase Wallet')
+            setError(err.message || 'Failed to connect to Coinbase Wallet')
         } finally {
             setConnecting(false)
         }
@@ -133,7 +133,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
 
             const phantom = (window as any).phantom?.ethereum
             if (!phantom) {
-                throw new Error('Phantom Wallet tidak terinstall')
+                throw new Error('Phantom Wallet is not installed')
             }
 
             const resp = await phantom.connect()
@@ -148,7 +148,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
                 }, 1000)
             }
         } catch (err: any) {
-            setError(err.message || 'Gagal terhubung ke Phantom')
+            setError(err.message || 'Failed to connect to Phantom')
         } finally {
             setConnecting(false)
         }
@@ -172,7 +172,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
                 await connectMetaMask() // Brave uses Ethereum provider
                 break
             default:
-                setError('Wallet provider tidak dikenal')
+                setError('Unknown wallet provider')
         }
     }
 
@@ -183,7 +183,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
                     <div className="flex items-center gap-3">
                         <CheckCircle className="w-6 h-6 text-green-400" />
                         <div className="flex-1">
-                            <p className="text-green-400 font-semibold text-sm">Wallet Terhubung</p>
+                            <p className="text-green-400 font-semibold text-sm">Wallet Connected</p>
                             <p className="text-green-300/70 text-xs font-mono mt-1">
                                 {userAddress.substring(0, 6)}...{userAddress.substring(userAddress.length - 4)}
                             </p>
@@ -199,7 +199,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
                     }}
                     className="w-full py-2 text-sm text-gray-400 hover:text-white transition-colors border border-gray-600 rounded-lg hover:bg-gray-700/30"
                 >
-                    Ganti Wallet
+                    Change Wallet
                 </button>
             </div>
         )
@@ -210,7 +210,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
             <div className="flex items-center gap-2 mb-4">
                 <Wallet className="w-5 h-5 text-blue-400" />
                 <label className="block text-gray-300 text-sm font-medium">
-                    Pilih Wallet
+                    Select Wallet
                 </label>
             </div>
 
@@ -246,7 +246,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
             {providers.length === 0 && (
                 <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
                     <p className="text-yellow-400 text-sm">
-                        ⚠️ Tidak ada wallet provider terdeteksi. Silakan install MetaMask atau wallet lainnya.
+                        ⚠️ No wallet providers detected. Please install MetaMask or another wallet.
                     </p>
                 </div>
             )}
@@ -254,7 +254,7 @@ export default function WalletSelector({ onWalletSelect, isLoading = false }: Wa
             <div className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs text-gray-300">
                 <p className="font-semibold text-blue-400 mb-1">💡 Tips:</p>
                 <p className="text-gray-400">
-                    Pastikan wallet Anda terhubung ke <strong>Base Network</strong> untuk transaksi yang lancar
+                    Make sure your wallet is connected to <strong>Base Network</strong> for smooth transactions
                 </p>
             </div>
         </div>

@@ -8,27 +8,27 @@ export default function HeroSection() {
         {
             icon: Shield,
             title: 'ERC-8004 Identity System',
-            description: 'Agent identity, reputation, dan validation registries yang terstandarisasi',
+            description: 'Standardized agent identity, reputation, and validation registries',
         },
         {
             icon: Zap,
             title: 'x402 Payment Rails',
-            description: 'Feeless transaction system (~$0.0001 per transaction) untuk efisiensi maksimal',
+            description: 'Feeless transaction system (~$0.0001 per transaction) for maximum efficiency',
         },
         {
             icon: Search,
             title: 'Agent Marketplace',
-            description: 'Discovery platform dengan search, filtering, dan real-time monitoring',
+            description: 'Discovery platform with search, filtering, and real-time monitoring',
         },
         {
             icon: Code,
             title: 'Single-line Deployment',
-            description: 'Easy agent registration system yang framework agnostic',
+            description: 'Easy agent registration system that is framework agnostic',
         },
         {
             icon: Activity,
             title: 'Real-time Monitoring',
-            description: 'Live agent status dan performance analytics untuk visibilitas penuh',
+            description: 'Live agent status and performance analytics for full visibility',
         },
         {
             icon: TrendingUp,
@@ -70,20 +70,19 @@ export default function HeroSection() {
                             </p>
 
                             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-fade-in [animation-delay:0.4s]">
-                                Platform marketplace komprehensif yang memungkinkan autonomous AI agents untuk bertransaksi,
-                                berkomunikasi, dan berkolaborasi menggunakan standar identitas
-                                <span className="text-primary font-semibold"> ERC-8004</span> dan payment rails
-                                <span className="text-primary font-semibold"> x402</span>.
+                                Comprehensive marketplace platform that enables autonomous AI agents to transact,
+                                communicate, and collaborate using ERC-8004 identity standards and
+                                <span className="text-primary font-semibold"> x402</span> payment rails.
                             </p>
                         </div>
 
                         <div className="flex flex-wrap gap-3 justify-center animate-scale-in [animation-delay:0.5s]">
                             <Button size="lg" className="group" onClick={scrollToMarketplace}>
-                                Jelajahi Agents
+                                Explore Agents
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </Button>
                             <Button size="lg" variant="outline">
-                                Lihat Dokumentasi
+                                View Documentation
                             </Button>
                         </div>
 

@@ -1,6 +1,6 @@
 // src/components/AgentsList.tsx
 /**
- * Component untuk menampilkan dan mengelola daftar agents
+ * Component for displaying and managing agent lists
  */
 
 import { useEffect, useState } from 'react'

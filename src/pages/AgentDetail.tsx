@@ -122,13 +122,13 @@ export default function AgentDetail() {
   }
 
   const getStatusText = (isActive: boolean) => {
-    return isActive ? 'AKTIF' : 'NONAKTIF'
+    return isActive ? 'ACTIVE' : 'INACTIVE'
   }
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-white text-xl">Memuat detail agent...</div>
+        <div className="text-white text-xl">Loading agent details...</div>
       </div>
     )
   }
@@ -139,7 +139,7 @@ export default function AgentDetail() {
         <div className="text-center">
           <AlertCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
           <div className="text-white text-xl mb-4">Agent tidak ditemukan</div>
-          <Link to="/" className="text-blue-400 hover:underline">Kembali ke Marketplace</Link>
+          <Link to="/" className="text-blue-400 hover:underline">Back to Marketplace</Link>
         </div>
       </div>
     )
@@ -157,7 +157,7 @@ export default function AgentDetail() {
             >
               <ArrowLeft className="w-6 h-6" />
             </button>
-            <h1 className="text-3xl font-bold">Detail Agent</h1>
+            <h1 className="text-3xl font-bold">Agent Details</h1>
           </div>
 
           {/* Agent Header Info */}
@@ -185,7 +185,7 @@ export default function AgentDetail() {
                   </span>
                 </div>
               </div>
-              <p className="text-gray-400 mb-4">{agent.identity?.description || 'Tidak ada deskripsi'}</p>
+              <p className="text-gray-400 mb-4">{agent.identity?.description || 'No description available'}</p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm border border-blue-500/30">
                   {agent.category}
@@ -272,7 +272,7 @@ export default function AgentDetail() {
               </ResponsiveContainer>
             ) : (
               <div className="h-[250px] flex items-center justify-center text-gray-500">
-                Belum ada data performa
+                No performance data available
               </div>
             )}
           </div>
@@ -318,7 +318,7 @@ export default function AgentDetail() {
         <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 rounded-xl p-6 mt-8">
           <div className="flex items-center gap-2 mb-6">
             <Clock className="w-6 h-6 text-purple-400" />
-            <h3 className="text-xl font-bold">Riwayat Transaksi</h3>
+            <h3 className="text-xl font-bold">Transaction History</h3>
             <span className="ml-auto text-sm text-gray-400">{transactions.length} transaksi</span>
           </div>
           
@@ -338,7 +338,7 @@ export default function AgentDetail() {
                   {transactions.map((tx) => (
                     <tr key={tx.id} className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors">
                       <td className="py-3 px-4 text-sm">
-                        {new Date(tx.created_at).toLocaleString('id-ID')}
+                        {new Date(tx.created_at).toLocaleString()}
                       </td>
                       <td className="py-3 px-4 text-sm font-mono text-gray-400">
                         {tx.from_address.substring(0, 10)}...{tx.from_address.substring(tx.from_address.length - 8)}
@@ -367,7 +367,7 @@ export default function AgentDetail() {
             </div>
           ) : (
             <div className="text-center py-12 text-gray-500">
-              Belum ada transaksi untuk agent ini
+              No transactions for this agent yet
             </div>
           )}
         </div>

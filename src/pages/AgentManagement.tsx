@@ -1,6 +1,6 @@
 // src/pages/AgentManagement.tsx
 /**
- * Page untuk mengelola agents (create, list, deploy)
+ * Page for managing agents (create, list, deploy)
  */
 
 import { useState } from 'react'

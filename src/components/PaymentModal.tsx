@@ -30,13 +30,13 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
   }
 
   const stateMessages = {
-    idle: 'Siap untuk deploy',
-    pending: 'Memulai deployment...',
-    initializing: 'Menginisialisasi agent...',
-    registering_identity: 'Mendaftarkan identitas agent ke registry...',
-    configuring: 'Mengonfigurasi agent...',
-    active: 'Agent berhasil di-deploy dan aktif!',
-    error: 'Terjadi kesalahan'
+    idle: 'Ready to deploy',
+    pending: 'Starting deployment...',
+    initializing: 'Initializing agent...',
+    registering_identity: 'Registering agent identity to registry...',
+    configuring: 'Configuring agent...',
+    active: 'Agent successfully deployed and active!',
+    error: 'An error occurred'
   }
 
   const getProgress = () => {
@@ -54,7 +54,7 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
     e.preventDefault()
 
     if (!walletAddress || walletAddress.length < 10) {
-      setError('Masukkan wallet address yang valid')
+      setError('Please enter a valid wallet address')
       return
     }
 
@@ -138,7 +138,7 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
 
     } catch (err: any) {
       console.error('Deployment error:', err)
-      setError(err.message || 'Terjadi kesalahan saat deployment')
+      setError(err.message || 'An error occurred during deployment')
       setDeploymentState('error')
     }
   }
@@ -158,7 +158,7 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
           <div className="text-center py-8 space-y-4">
             <CheckCircle className="w-16 h-16 text-primary mx-auto animate-pulse" />
             <div className="space-y-2">
-              <h3 className="text-xl font-bold font-serif">Deployment Berhasil!</h3>
+              <h3 className="text-xl font-bold font-serif">Deployment Successful!</h3>
               <p className="text-sm text-muted-foreground">{stateMessages.active}</p>
               {deploymentId && (
                 <Badge variant="secondary" className="font-mono text-xs">
@@ -185,7 +185,7 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
                 </div>
 
                 <div className="flex items-center justify-between pt-3 border-t border-border">
-                  <span className="text-sm text-muted-foreground">Biaya Deployment:</span>
+                  <span className="text-sm text-muted-foreground">Deployment Cost:</span>
                   <span className="text-lg font-bold text-primary">
                     ${agent.price_per_request.toFixed(2)} USDC
                   </span>
@@ -208,19 +208,19 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
                   <div className="space-y-1.5 text-xs text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <div className={`w-1.5 h-1.5 rounded-full ${deploymentState === 'pending' ? 'bg-primary animate-pulse' : 'bg-primary'}`} />
-                      <span>Memulai deployment</span>
+                      <span>Starting deployment</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className={`w-1.5 h-1.5 rounded-full ${deploymentState === 'initializing' ? 'bg-primary animate-pulse' : deploymentState === 'registering_identity' || deploymentState === 'configuring' ? 'bg-primary' : 'bg-muted'}`} />
-                      <span>Inisialisasi agent</span>
+                      <span>Initializing agent</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className={`w-1.5 h-1.5 rounded-full ${deploymentState === 'registering_identity' ? 'bg-primary animate-pulse' : deploymentState === 'configuring' ? 'bg-primary' : 'bg-muted'}`} />
-                      <span>Registrasi ERC-8004 identity</span>
+                      <span>Registering ERC-8004 identity</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className={`w-1.5 h-1.5 rounded-full ${deploymentState === 'configuring' ? 'bg-primary animate-pulse' : 'bg-muted'}`} />
-                      <span>Konfigurasi final</span>
+                      <span>Final configuration</span>
                     </div>
                   </div>
                 </CardContent>
@@ -264,7 +264,7 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
                     <div className="text-xs">
                       <p className="font-semibold mb-1">x402 Payment System</p>
                       <p className="text-muted-foreground">
-                        Pembayaran feeless (~$0.0001 gas) dengan finality ~200ms pada Base Network
+                        Feeless payment (~$0.0001 gas) with ~200ms finality on Base Network
                       </p>
                     </div>
                   </CardContent>

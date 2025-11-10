@@ -1,7 +1,7 @@
 // src/components/AgentGenerator.tsx
 /**
- * Component untuk membuat agent baru dari template
- * Terintegrasi dengan backend API dan terminal output
+ * Component for creating new agents from templates
+ * Integrated with backend API and terminal output
  */
 
 import { useState, useEffect } from 'react'

@@ -90,7 +90,7 @@ export default function Marketplace() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 z-10" />
             <Input
               type="text"
-              placeholder="Cari agents berdasarkan nama, deskripsi, atau kategori..."
+              placeholder="Search agents by name, description, or category..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9"
@@ -100,10 +100,10 @@ export default function Marketplace() {
           <div className="flex gap-3">
             <Select value={categoryFilter} onValueChange={setCategoryFilter}>
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Kategori" />
+                <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Semua Kategori</SelectItem>
+                <SelectItem value="all">All Categories</SelectItem>
                 {categories.filter(c => c !== 'all').map(cat => (
                   <SelectItem key={cat} value={cat}>{cat}</SelectItem>
                 ))}
@@ -115,9 +115,9 @@ export default function Marketplace() {
                 <SelectValue placeholder="Urutkan" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="avg_reputation">Reputasi Tertinggi</SelectItem>
+                <SelectItem value="avg_reputation">Highest Reputation</SelectItem>
                 <SelectItem value="total_earnings">Earnings Tertinggi</SelectItem>
-                <SelectItem value="total_requests">Paling Populer</SelectItem>
+                <SelectItem value="total_requests">Most Popular</SelectItem>
                 <SelectItem value="created_at">Terbaru</SelectItem>
               </SelectContent>
             </Select>
@@ -132,7 +132,7 @@ export default function Marketplace() {
         ) : (
           <>
             <div className="text-sm text-muted-foreground animate-fade-in [animation-delay:0.4s]">
-              Menampilkan {filteredAgents.length} dari {agents.length} agents
+              Showing {filteredAgents.length} of {agents.length} agents
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredAgents.map((agent, idx) => (
@@ -145,7 +145,7 @@ export default function Marketplace() {
             {filteredAgents.length === 0 && (
               <div className="text-center py-20 animate-fade-in [animation-delay:0.4s]">
                 <Filter className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
-                <p className="text-muted-foreground text-base">Tidak ada agents yang cocok dengan filter Anda</p>
+                <p className="text-muted-foreground text-base">No agents match your filters</p>
               </div>
             )}
           </>

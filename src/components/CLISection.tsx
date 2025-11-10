@@ -110,8 +110,8 @@ export default function CLISection() {
                         </h2>
 
                         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                            Lucid Agents CLI memudahkan Anda membuat, mengelola, dan deploy AI agents
-                            dengan scaffolding otomatis dan template yang sudah dioptimalkan.
+                            Lucid Agents CLI makes it easy for you to create, manage, and deploy AI agents
+                            with automatic scaffolding and optimized templates.
                         </p>
 
                         {/* Installation Command */}
