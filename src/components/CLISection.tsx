@@ -212,8 +212,8 @@ export default function CLISection() {
                                     key={index}
                                     onClick={() => setCurrentCommand(index)}
                                     className={`px-3 py-1 rounded text-xs font-mono whitespace-nowrap transition-colors ${currentCommand === index
-                                            ? "bg-primary text-primary-foreground"
-                                            : "bg-gray-700 text-gray-400 hover:bg-gray-600"
+                                        ? "bg-primary text-primary-foreground"
+                                        : "bg-gray-700 text-gray-400 hover:bg-gray-600"
                                         }`}
                                 >
                                     {cmd.description}
