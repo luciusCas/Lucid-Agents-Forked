@@ -271,25 +271,78 @@ export default function CLISection() {
                     ))}
                 </div>
 
-                {/* CTA Section */}
-                <div className="text-center mt-12 space-y-4">
-                    <h3 className="text-2xl md:text-3xl font-bold font-serif">
-                        Ready to Build Your First Agent?
-                    </h3>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Install the CLI and start creating powerful AI agents in minutes.
-                    </p>
-                    <div className="flex flex-wrap gap-3 justify-center pt-4">
-                        <Button size="lg" className="group">
-                            Get Started
-                            <Terminal className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
-                        </Button>
-                        <Button size="lg" variant="outline">
-                            View Documentation
-                        </Button>
+                {/* CTA Section with Mascot */}
+                <div className="relative mt-12 py-6">
+                    {/* Left Side - Mascot Fixed at Left Edge */}
+                    <div className="hidden lg:block fixed left-0 top-1/3 z-20">
+                        <div className="relative w-48">
+                            {/* Mascot Image */}
+                            <img
+                                src="/logo_1.png"
+                                alt="Lucid Mascot"
+                                className="w-full h-auto object-contain"
+                                style={{
+                                    filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.15))'
+                                }}
+                            />
+
+                            {/* Subtle Glow Background */}
+                            <div className="absolute -inset-6 bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-2xl -z-10" />
+                        </div>
+                    </div>
+
+                    {/* CTA Content - Centered */}
+                    <div className="text-center space-y-6">
+                        <div className="space-y-4">
+                            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
+                                Ready to Build Your First Agent?
+                            </h3>
+                            <p className="text-lg text-muted-foreground">
+                                Install the CLI and start creating powerful AI agents in minutes.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-3 justify-center pt-4">
+                            <Button size="lg" className="group">
+                                Get Started
+                                <Terminal className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
+                            </Button>
+                            <Button size="lg" variant="outline">
+                                View Documentation
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Mobile Mascot - Bottom */}
+                    <div className="md:hidden flex justify-center mt-8">
+                        <img
+                            src="/logo_1.png"
+                            alt="Lucid Mascot"
+                            className="w-48 h-auto object-contain"
+                            style={{
+                                filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.1))'
+                            }}
+                        />
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                @keyframes peek {
+                    0%, 100% {
+                        transform: translateX(-20px);
+                        opacity: 0.8;
+                    }
+                    50% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                .animate-peek {
+                    animation: peek 3s ease-in-out infinite;
+                }
+            `}</style>
         </div>
     );
 }
