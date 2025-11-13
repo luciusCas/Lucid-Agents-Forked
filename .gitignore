@@ -18,9 +18,11 @@
 **/downloads/
 **/eggs/
 **/.eggs/
-# Ignore lib folder but keep src/lib/agentImageMap.ts
+# Ignore lib folder but keep essential files
 src/lib/
 !src/lib/agentImageMap.ts
+!src/lib/supabase.ts
+!src/lib/utils.ts
 **/lib64/
 **/parts/
 **/sdist/
