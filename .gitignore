@@ -18,7 +18,8 @@
 **/downloads/
 **/eggs/
 **/.eggs/
-**/lib/
+# Note: Removed **/lib/ to allow src/lib/ for JavaScript source code
+# Python should use venv or .venv directories instead
 **/lib64/
 **/parts/
 **/sdist/
