@@ -26,7 +26,7 @@ export default function AgentDetail() {
     const fetchAgentDetail = async () => {
       try {
         setLoading(true)
-        
+
         // Fetch agent from marketplace with identity
         const { data: agentData, error: agentError } = await supabase
           .from('agent_marketplace')
@@ -38,7 +38,7 @@ export default function AgentDetail() {
           .single()
 
         if (agentError) throw agentError
-        
+
         setAgent(agentData)
 
         // Fetch transactions for this agent
@@ -164,8 +164,8 @@ export default function AgentDetail() {
           {/* Agent Header Info */}
           <div className="flex items-start gap-6">
             <div className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-700">
-              <img 
-                src={getAgentImageUrl(agent.agent_id, agent.agent_type, agent.identity?.image_url)} 
+              <img
+                src={getAgentImageUrl(agent.agent_id, agent.agent_type, agent.identity?.image_url)}
                 alt={agent.identity?.name}
                 className="w-full h-full object-cover"
               />
@@ -264,7 +264,7 @@ export default function AgentDetail() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                   <XAxis dataKey="name" stroke="#9CA3AF" />
                   <YAxis stroke="#9CA3AF" />
-                  <Tooltip 
+                  <Tooltip
                     contentStyle={{ backgroundColor: '#1F2937', border: '1px solid #374151', borderRadius: '8px' }}
                     labelStyle={{ color: '#F9FAFB' }}
                   />
@@ -281,7 +281,7 @@ export default function AgentDetail() {
           {/* Capabilities & Frameworks */}
           <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 rounded-xl p-6">
             <h3 className="text-xl font-bold mb-4">Capabilities & Frameworks</h3>
-            
+
             <div className="mb-6">
               <div className="text-sm text-gray-400 mb-2">Capabilities:</div>
               <div className="flex flex-wrap gap-2">
@@ -322,7 +322,7 @@ export default function AgentDetail() {
             <h3 className="text-xl font-bold">Transaction History</h3>
             <span className="ml-auto text-sm text-gray-400">{transactions.length} transaksi</span>
           </div>
-          
+
           {transactions.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -353,11 +353,10 @@ export default function AgentDetail() {
                         </span>
                       </td>
                       <td className="py-3 px-4 text-sm">
-                        <span className={`px-2 py-1 rounded text-xs ${
-                          tx.status === 'completed' ? 'bg-green-500/20 text-green-400' :
-                          tx.status === 'pending' ? 'bg-yellow-500/20 text-yellow-400' :
-                          'bg-red-500/20 text-red-400'
-                        }`}>
+                        <span className={`px-2 py-1 rounded text-xs ${tx.status === 'completed' ? 'bg-green-500/20 text-green-400' :
+                            tx.status === 'pending' ? 'bg-yellow-500/20 text-yellow-400' :
+                              'bg-red-500/20 text-red-400'
+                          }`}>
                           {tx.status}
                         </span>
                       </td>
@@ -375,7 +374,7 @@ export default function AgentDetail() {
       </div>
 
       {showPaymentModal && (
-        <PaymentModal 
+        <PaymentModal
           agent={agent}
           onClose={() => setShowPaymentModal(false)}
         />
