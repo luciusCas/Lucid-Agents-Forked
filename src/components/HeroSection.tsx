@@ -72,7 +72,7 @@ export default function HeroSection() {
 
                 {/* GitHub Logo */}
                 <a
-                    href="https://github.com/luciusCas/Lucid-Agents-Platform.git"
+                    href="https://github.com/luciusCas/Lucid-Agents-Forked.git"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-all duration-300 hover:scale-110"
@@ -101,7 +101,7 @@ export default function HeroSection() {
 
                             <div className="space-y-4">
                                 <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold font-serif leading-tight animate-slide-in-up [animation-delay:0.2s]">
-                                    Lucid Agents Platform
+                                    Lucid Agents Forked
                                 </h1>
 
                                 <p className="text-xl md:text-2xl text-primary font-serif animate-slide-in-up [animation-delay:0.3s]">
