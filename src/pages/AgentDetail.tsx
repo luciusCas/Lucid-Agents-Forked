@@ -5,6 +5,7 @@ import { AgentMarketplace, AgentTransaction } from '@/types/agent'
 import { supabase } from '@/lib/supabase'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import PaymentModal from '@/components/PaymentModal'
+import { getAgentImageUrl } from '@/lib/agentImageMap'
 
 const SUPABASE_URL = 'https://hvkuuuhijtlhsogzgbix.supabase.co'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2a3V1dWhpanRsaHNvZ3pnYml4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0ODE4OTMsImV4cCI6MjA3ODA1Nzg5M30.ztW5p4qZreDA8cy4jrWxc32LJFHTN6dVbtLrVCL8eeU'
@@ -164,7 +165,7 @@ export default function AgentDetail() {
           <div className="flex items-start gap-6">
             <div className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-700">
               <img 
-                src={agent.identity?.image_url || 'https://api.dicebear.com/7.x/bottts/svg?seed=default'} 
+                src={getAgentImageUrl(agent.agent_id, agent.agent_type, agent.identity?.image_url)} 
                 alt={agent.identity?.name}
                 className="w-full h-full object-cover"
               />

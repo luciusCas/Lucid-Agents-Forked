@@ -126,11 +126,11 @@ export default function AgentsList({ onAgentSelect, refreshTrigger }: AgentsList
 
     const getAgentIcon = (type?: string) => {
         const icons: { [key: string]: string } = {
-            'macro': '🔄',
-            'arbitrage': '💹',
-            'game': '🎮',
-            'creative': '🎨',
-            'e-commerce': '🛒'
+            'macro': '⚙️',
+            'arbitrage': '🧠',
+            'game': '🤖',
+            'creative': '✨',
+            'e-commerce': '💼'
         }
         return icons[type || ''] || '🤖'
     }

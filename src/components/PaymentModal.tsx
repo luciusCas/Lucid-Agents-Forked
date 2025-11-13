@@ -8,6 +8,7 @@ import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 import { Progress } from './ui/progress'
 import { Badge } from './ui/badge'
+import { getAgentImageUrl } from '@/lib/agentImageMap'
 
 interface PaymentModalProps {
   agent: AgentMarketplace
@@ -174,7 +175,7 @@ export default function PaymentModal({ agent, onClose }: PaymentModalProps) {
               <CardContent className="p-4">
                 <div className="flex items-center gap-3 mb-3">
                   <img
-                    src={agent.identity?.image_url || 'https://api.dicebear.com/7.x/bottts/svg?seed=default'}
+                    src={getAgentImageUrl(agent.agent_id, agent.agent_type, agent.identity?.image_url)}
                     alt={agent.identity?.name}
                     className="w-12 h-12 rounded-lg ring-1 ring-border"
                   />

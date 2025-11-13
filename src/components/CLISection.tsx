@@ -231,27 +231,27 @@ export default function CLISection() {
                         {
                             title: "Macro Agent",
                             description: "Automated task execution and workflow processing",
-                            icon: "🔄"
+                            icon: "⚙️"
                         },
                         {
                             title: "Arbitrage Agent",
                             description: "Real-time market analysis and trading opportunities",
-                            icon: "💹"
+                            icon: "🧠"
                         },
                         {
                             title: "Game Agent",
                             description: "Gaming automation and strategy optimization",
-                            icon: "🎮"
+                            icon: "🤖"
                         },
                         {
                             title: "Creative Agent",
                             description: "Content generation and artistic capabilities",
-                            icon: "🎨"
+                            icon: "✨"
                         },
                         {
                             title: "E-commerce Agent",
                             description: "Store management and customer analytics",
-                            icon: "🛒"
+                            icon: "💼"
                         }
                     ].map((agent, index) => (
                         <Card

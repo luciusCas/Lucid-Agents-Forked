@@ -894,4 +894,5 @@
 # data/
 # uploads/
 # downloads/
+.github/
 

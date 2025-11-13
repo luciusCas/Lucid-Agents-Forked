@@ -6,6 +6,7 @@ import PaymentModal from './PaymentModal'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
+import { getAgentImageUrl } from '@/lib/agentImageMap'
 
 interface AgentCardProps {
   agent: AgentMarketplace
@@ -49,7 +50,7 @@ export default function AgentCard({ agent }: AgentCardProps) {
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-muted ring-1 ring-border animate-scale-in">
               <img
-                src={agent.identity?.image_url || 'https://api.dicebear.com/7.x/bottts/svg?seed=default'}
+                src={getAgentImageUrl(agent.agent_id, agent.agent_type, agent.identity?.image_url)}
                 alt={agent.identity?.name}
                 className="w-full h-full object-cover"
               />
